@@ -1,0 +1,194 @@
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: inherit;
+}
+
+img {
+  filter: brightness(0.96);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tipografía */
+body, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, 
+span, p, label, strong, li, i, small {
+  text-rendering: optimizeLegibility;
+}
+
+/* Pesos de fuente */
+b, h1, h2, h3, h4, h5, h6, strong, button {
+  font-weight: 700;
+}
+
+a, label {
+  font-weight: 600;
+}
+
+input, textarea, select, span, p, li {
+  font-weight: 400;
+}
+
+i, [is-number] {
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+span li, strong {
+  color: inherit;
+}
+
+/* Tamaños de texto responsive */
+div {
+  font-size: 0;
+}
+
+h1, .h1 {
+  font-size: clamp(1.5rem, 5vw + 1rem, 3rem);
+}
+
+h2, .h2 {
+  font-size: clamp(1.375rem, 4.5vw + 0.9rem, 2.5rem);
+}
+
+h3, .h3 {
+  font-size: clamp(1.25rem, 4vw + 0.8rem, 2rem);
+}
+
+h4, .h4 {
+  font-size: clamp(1.125rem, 3.5vw + 0.7rem, 1.75rem);
+}
+
+h5, .h5 {
+  font-size: clamp(1rem, 3vw + 0.6rem, 1.5rem);
+}
+
+h6, .h6 {
+  font-size: clamp(0.875rem, 2.5vw + 0.5rem, 1.25rem);
+}
+
+p {
+  font-size: clamp(0.75rem, 2vw + 0.4rem, 1rem);
+  line-height: clamp(1.125rem, 3vw + 0.6rem, 1.5rem);
+  word-break: break-word;
+}
+
+li, button, input, textarea {
+  font-size: 0.875rem;
+}
+
+label, span {
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+small {
+  font-size: 0.5rem;
+}
+
+/* Elementos de formulario */
+button,
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  border-radius: var(--base-border-radius);
+  border-style: solid;
+  border-width: 1px;
+  position: relative;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+  line-height: 1;
+  outline: none;
+}
+
+button,
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select {
+  overflow: hidden;
+  padding: 0 16px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select,
+button {
+  height: 40px;
+}
+
+textarea {
+  min-height: 96px;
+  padding: 16px;
+  resize: vertical;
+}
+
+/* Estados de placeholder y focus */
+::placeholder {
+  opacity: 0.64;
+  transition: text-indent 0.3s ease;
+}
+
+input:focus::placeholder, 
+textarea:focus::placeholder {
+  text-indent: 4px;
+}
+
+/* Estados disabled */
+button:disabled, 
+input:disabled, 
+textarea:disabled, 
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.88;
+}
+
+/* Utilidades */
+[tabindex], 
+summary {
+  outline: none;
+}
+
+[ellipsis], 
+[ellipsis] * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+pre {
+  color: inherit;
+  font-size: 12px;
+  padding: 16px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
