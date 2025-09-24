@@ -31,13 +31,13 @@
     <label v-if="label" style="margin-bottom: 6px;">{{ label }}</label>
     <div :class="[$style.select, {[$style.select_drop]: isDrop}, {[$style.disabled]: isDisabled}]" ref="selectRef">
       <div @click="isDisabled ? ()=>{} : isDrop = !isDrop" :class="$style.trigger">
-        <input type="text" :placeholder readonly :value="selected?.text" :disabled="isDisabled">
+        <input type="text" :placeholder readonly :value="selected?.text || selected?.nombre" :disabled="isDisabled">
         <IconUilAngleDown size="24" color="var(--select-color-border)"/>
       </div>
   
       <div :class="[$style.options, $style[optionsUp ? 'options_up' : 'options_down']]">
         <li v-if="options?.length === 0" :class="$style.option"><i>Sin opciones</i></li>
-        <li @click="handleSelect($, i)" v-for="($, i) in options" :class="$style.option">{{ $?.text }}</li>
+        <li @click="handleSelect($, i)" v-for="($, i) in options" :class="$style.option">{{ $?.text || $?.nombre }}</li>
       </div>
     </div>
   </div>
