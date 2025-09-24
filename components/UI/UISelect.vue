@@ -104,7 +104,7 @@
 
   .options {
     left: 0;
-    max-height: 200px;
+    max-height: 208px;
     opacity: 0;
     overflow-x: hidden;
     overflow-y: auto;
