@@ -1,4 +1,4 @@
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
   return {
     provide: {
       formatError: (error) => {
@@ -11,6 +11,15 @@ export default defineNuxtPlugin(() => {
           error?.message ||
           error?.data?.detail?.[0]?.msg ||
           error
+      },
+      back: (options) => {
+        const { back, current } = nuxtApp.$router.options.history.state
+
+        if (!back || (back === current)) {
+          navigateTo(options?.returnUltimately || '/', { replace: true })
+        } else {
+          navigateTo(back, { replace: true })
+        }
       }
     }
   }
