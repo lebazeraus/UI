@@ -19,7 +19,8 @@
 
 <template>
   <ClientOnly>
-    <img v-if="!src || srcDefault" :src="srcDefault" v-bind="$attrs" :class="$style.ui_img" :style="styleHeightWidth($attrs)">
+    <img v-if="!src" :src="srcPlaceholder" v-bind="$attrs" :class="[$style.ui_img, $style.placeholder]" :style="styleHeightWidth($attrs)">
+    <img v-else-if="srcDefault" :src="srcDefault" v-bind="$attrs" :class="$style.ui_img" :style="styleHeightWidth($attrs)">
     <img v-else @error="change" :src :class="$style.ui_img" :style="styleHeightWidth($attrs)">
     <template #fallback>
       <div v-bind="$attrs" :class="$style.ui_img" :style="styleHeightWidth($attrs)">
@@ -34,5 +35,9 @@
     background-color: var(--color-background-focus);
     object-fit: cover;
     object-position: center;
+  }
+
+  .ui_img.placeholder {
+    mix-blend-mode: luminosity;
   }
 </style>
