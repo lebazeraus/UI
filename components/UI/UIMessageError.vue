@@ -29,7 +29,7 @@
     <div :class="$style.error">
       <span :class="$style.error_text">{{ error?.data?.message || error?.message }}</span>
       <DevOnly>
-        <span :class="$style.error_text">{{ error?.data || error }}</span>
+        <span :class="$style.error_text_dev">{{ error?.data || error }}</span>
       </DevOnly>
 
       <div v-if="isSupported" :class="$style.error_footer">
@@ -56,10 +56,14 @@
     row-gap: 16px;
   }
   
-  .error_text {
+  .error_text, .error_text_dev {
     color: var(--color-red-text);
     max-width: 768px;
     word-break: break-word;
+  }
+
+  .error_text_dev {
+    white-space: pre-wrap;
   }
   
   .error_footer {
