@@ -26,10 +26,12 @@
 </script>
 
 <template>
-  <div :class="[$style.ui_offline_detector, {[$style.show]: show}]">
-    <IconUilWifiSlash v-if="hideText" color="white" size="18"/>
-    <span v-else>Sin conexión a internet</span>
-  </div>
+  <Teleport to="body">
+    <div :class="[$style.ui_offline_detector, {[$style.show]: show}]">
+      <IconUilWifiSlash v-if="hideText" color="white" size="18"/>
+      <span v-else>Sin conexión a internet</span>
+    </div>
+  </Teleport>
 </template>
 
 <style module>
