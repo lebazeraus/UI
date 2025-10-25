@@ -8,8 +8,10 @@
   const indexTabSelected = defineModel({ type: Number })
 
   function select($, i) {
-    indexTabSelected.value = i
     emit('select', { index: i, ...$ })
+    setTimeout(() => {
+      indexTabSelected.value = i
+    }, 300)
   }
 </script>
 
