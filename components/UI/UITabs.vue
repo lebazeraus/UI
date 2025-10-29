@@ -9,9 +9,7 @@
 
   function select($, i) {
     emit('select', { index: i, ...$ })
-    setTimeout(() => {
-      indexTabSelected.value = i
-    }, 300)
+    indexTabSelected.value = i
   }
 </script>
 
