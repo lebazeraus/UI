@@ -114,6 +114,7 @@ input[type="password"],
 input[type="tel"],
 input[type="email"],
 input[type="number"],
+input[type="date"],
 textarea,
 select {
   border-radius: var(--base-border-radius);
@@ -131,6 +132,7 @@ input[type="password"],
 input[type="tel"],
 input[type="email"],
 input[type="number"],
+input[type="date"],
 select {
   overflow: hidden;
   padding: 0 16px;
@@ -141,6 +143,7 @@ input[type="password"],
 input[type="tel"],
 input[type="email"],
 input[type="number"],
+input[type="date"],
 select,
 button {
   height: 40px;
