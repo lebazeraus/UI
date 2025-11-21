@@ -10,12 +10,15 @@
   })
 
   const selected = defineModel({ type: [String, Object, Boolean] })
-  const emit = defineEmits(['change'])
+  const emit = defineEmits(['change', 'blur'])
 
   const isDrop = ref(false)
   const selectRef = ref(null)
 
   onClickOutside(selectRef, () => {
+    if (isDrop.value) {
+      emit('blur')
+    }
     isDrop.value = false
   })
 
