@@ -6,7 +6,8 @@
     optionsUp: { type: Boolean, default: false },
     placeholder: { type: String, default: 'Seleccionar' },
     label: { type: String },
-    isDisabled: { type: Boolean }
+    isDisabled: { type: Boolean },
+    propOption: { type: String, default: 'nombre' }
   })
 
   const selected = defineModel({ type: [String, Object, Boolean] })
@@ -40,7 +41,7 @@
   
       <div :class="[$style.options, $style[optionsUp ? 'options_up' : 'options_down']]">
         <li v-if="options?.length === 0" :class="$style.option"><i>Sin opciones</i></li>
-        <li @click="handleSelect($, i)" v-for="($, i) in options" :class="$style.option">{{ $?.text || $?.nombre }}</li>
+        <li @click="handleSelect($, i)" v-for="($, i) in options" :class="$style.option">{{ $?.text || $?.[propOption] }}</li>
       </div>
     </div>
   </div>
