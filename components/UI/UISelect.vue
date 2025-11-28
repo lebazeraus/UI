@@ -35,7 +35,7 @@
     <label v-if="label" style="margin-bottom: 6px;">{{ label }}</label>
     <div :class="[$style.select, {[$style.select_drop]: isDrop}, {[$style.disabled]: isDisabled}]" ref="selectRef">
       <div @click="isDisabled ? ()=>{} : isDrop = !isDrop" :class="$style.trigger">
-        <input type="text" :placeholder readonly :value="selected?.text || selected?.nombre" :disabled="isDisabled">
+        <input type="text" :placeholder readonly :value="selected?.text || selected?.[propOption]" :disabled="isDisabled">
         <IconUilAngleDown size="24" color="var(--select-color-border)"/>
       </div>
   
