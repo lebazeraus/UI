@@ -1,5 +1,5 @@
 <script setup>
-    defineProps({
+  defineProps({
     color: { type: String, default: 'var(--color-secondary)' },
     size: { type: [Number, String], default: 24 }
   })
