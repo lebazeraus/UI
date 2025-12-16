@@ -1,5 +1,6 @@
 <script setup>
   const props = defineProps({
+    autocomplete: { type: String, default: String() },
     placeholder: { type: String, default: String() },
     holder: { type: String, default: String() },
     isDisabled: { type: Boolean, default: false },
@@ -43,7 +44,7 @@
   <div :class="$style.input">
     <label v-if="label">{{ label }}</label>
     <div :class="$style.input_wrapper">
-      <input @focus="label ? () => {} : focus" @blur="blur" @input="isDisabled ? () => {} : emit('input', $event.target.value)" :type :placeholder="placeholderFocus" v-model="value" :disabled="isDisabled" :name :title="title === true ? placeholder : (title || undefined)" :min :max>
+      <input @focus="label ? () => {} : focus" @blur="blur" @input="isDisabled ? () => {} : emit('input', $event.target.value)" :type :placeholder="placeholderFocus" v-model="value" :disabled="isDisabled" :name="props.name" :title="title === true ? placeholder : (title || undefined)" :min :max :autocomplete>
       <UIButtonSlot v-if="clearable && hasValue && !isDisabled" @click="clearInput" :class="$style.clear_button" :is-disabled="isDisabled" variant="alternate">
         <IconUilTimes :size="16"/>
       </UIButtonSlot>
