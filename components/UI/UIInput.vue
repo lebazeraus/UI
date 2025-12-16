@@ -1,6 +1,6 @@
 <script setup>
   const props = defineProps({
-    autocomplete: { type: String, default: String() },
+    autocomplete: { type: String },
     placeholder: { type: String, default: String() },
     holder: { type: String, default: String() },
     isDisabled: { type: Boolean, default: false },
